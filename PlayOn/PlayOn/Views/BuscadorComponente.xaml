@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PlayOn.Views.BuscadorComponente">
+  <ContentView.Content>
+        <StackLayout
+            Margin="10">
+            <Label
+                Text="Metodo de Busqueda" 
+                FontSize="20"
+                FontAttributes="Bold"/>
+            <RadioButton
+                Content="SKU"
+                IsChecked="true" 
+                Value="Sku,Id"
+                CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton
+                Content="Nombre"
+                Value="Nombre"
+                CheckedChanged="RadioButton_CheckedChanged"/>
+            <Label
+                Text="Nombre o SKU según lo seleccionado" 
+                Margin="0, 20, 0, 0"
+                FontSize="20"
+                FontAttributes="Bold"/>
+            <Entry
+                Style="{StaticResource EstiloEntry}"
+                x:Name="entTexto"
+                Placeholder="Digite el texto aqui"
+                TextChanged="entTexto_TextChanged"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

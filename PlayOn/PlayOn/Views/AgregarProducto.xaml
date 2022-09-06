@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlayOn.Views.AgregarProducto"
+             xmlns:circulo="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="Agregar Producto">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout 
+                x:Name="Controles"
+                Margin="10"
+                VerticalOptions="Center">
+                <circulo:CircleImage 
+                    x:Name="xfImage"
+                    Source="inventario"
+                    Style="{StaticResource EstiloImagenCircular}">
+                    <circulo:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Foto_Tapped"/>
+                    </circulo:CircleImage.GestureRecognizers>
+                </circulo:CircleImage>
+                <Label
+                    Style="{StaticResource EstiloSubtitulo}"
+                    Text="Toque la imagen para cambiarla"
+                    HorizontalOptions="Center"/>
+                <Entry
+                    Style="{StaticResource EstiloEntry}"
+                    x:Name= "txtNombre"
+                    Placeholder="Nombre de Producto"/>
+                <Entry
+                    Style="{StaticResource EstiloEntry}"
+                    x:Name= "txtSKU"
+                    Placeholder="SKU"/>
+                <Editor
+                    Style="{StaticResource EstiloEditor}"
+                    x:Name= "txtDescripcion"
+                    Placeholder="Descripción"/>
+                <Entry
+                    Style="{StaticResource EstiloEntry}"
+                    x:Name= "txtMarca"
+                    Placeholder="Marca"/>
+                <Entry
+                    Style="{StaticResource EstiloEntry}"
+                    x:Name= "txtCategoria"
+                    Placeholder="Categoria"/>
+                <Entry
+                    Style="{StaticResource EstiloEntry}"
+                    x:Name= "txtEdadMinima"
+                    Placeholder="Edad Minima en Años"
+                    Keyboard="Numeric"/>
+                <Entry
+                    Style="{StaticResource EstiloEntry}"
+                    x:Name= "txtPrecio"
+                    Placeholder="Precio en Colones"
+                    Keyboard="Numeric"/>
+                <Button
+                    Style="{StaticResource EstiloBotones}"
+                    x:Name="btnAgregar"
+                    Text="Agregar Producto"
+                    Clicked="btnAgregar_Clicked"/>
+                <Button
+                    Style="{StaticResource EstiloBotones}"
+                    x:Name="btnLimpiar"
+                    Text="Limpiar campos"
+                    Clicked="btnLimpiar_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

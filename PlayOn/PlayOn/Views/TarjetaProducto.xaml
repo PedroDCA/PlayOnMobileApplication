@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="this"
+    x:Class="TarjetaProducto.Controls.TarjetaProducto">
+    <Frame
+        BindingContext="{x:Reference this}"
+        BackgroundColor="#8d1ba5"
+        CornerRadius="10"
+        HasShadow="False"
+        Padding="8"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+        <Grid>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer
+                    Tapped="TapGestureRecognizer_Tapped"/>
+            </Grid.GestureRecognizers>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="260" />
+            </Grid.ColumnDefinitions>
+            <Frame
+                Grid.Column="0"
+                Style="{StaticResource EstiloFrameImagenLista}">
+                <Image
+                    Source="{Binding ImagenFuente}"
+                    Margin="-20"
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    Aspect="AspectFill"/>
+            </Frame>
+            <Label
+                Grid.Column="1"
+                Text="{Binding NombreProducto, FallbackValue='Card Title'}"
+                TextColor="White"
+                Margin="0,1,0,0"
+                FontAttributes="Bold"
+                FontSize="23"
+                VerticalTextAlignment="Start"
+                HorizontalTextAlignment="Start" />
+            <Label
+                Grid.Column="1"
+                TextColor="White"
+                Text="{Binding Footer,
+                    FallbackValue='Disponibles: 0'}"
+                FontAttributes="Bold"
+                FontSize="13"
+                VerticalTextAlignment="End"
+                HorizontalTextAlignment="Start" />
+        </Grid>
+    </Frame>
+</ContentView>

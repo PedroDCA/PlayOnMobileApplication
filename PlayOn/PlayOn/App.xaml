@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:circulo="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:iconos="clr-namespace:IconApp"
+    x:Class="PlayOn.App">
+    <Application.Resources>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#8d1ba5"/>
+            <Setter Property="BarTextColor" Value="White"/>
+        </Style>
+        <Style x:Key="EstiloMiniLogo" TargetType="iconos:IconView">
+            <Setter Property="Source" Value="logo.png"/>
+            <Setter Property="WidthRequest" Value="100"/>
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="VerticalOptions" Value="End"/>
+            <Setter Property="HorizontalOptions" Value="End"/>
+            <Setter Property="Foreground" Value="DarkGray"/>
+        </Style>
+        <Style x:Key="EstiloTitulo" TargetType="Label">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="TextColor" Value="Color.Default"/>
+        </Style>
+        <Style x:Key="EstiloSubtitulo" TargetType="Label">
+            <Setter Property="FontSize" Value="Small"/>
+            <Setter Property="TextColor" Value="Color.Default"/>
+        </Style>
+        <Style x:Key="EstiloBotones" TargetType="Button">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BackgroundColor" Value="#8d1ba5"/>
+            <Setter Property="CornerRadius" Value="15"/>
+        </Style>
+        <Style x:Key="EstiloEntry" TargetType="Entry">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="PlaceholderColor" Value="LightGray"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="Color.Default"/>
+        </Style>
+        <Style x:Key="EstiloEditor" TargetType="Editor">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="PlaceholderColor" Value="LightGray"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="TextColor" Value="Color.Default"/>
+            <Setter Property="AutoSize" Value="TextChanges"/>
+        </Style>
+        <Style x:Key="EstiloImagenCircular" TargetType="circulo:CircleImage">
+            <Setter Property="WidthRequest" Value="150"/>
+            <Setter Property="HeightRequest" Value="150"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="Aspect" Value="AspectFill"/>
+            <Setter Property="BorderThickness" Value="4"/>
+            <Setter Property="FillColor" Value="#FF99FF"/>
+            <Setter Property="BorderColor" Value="#DimGray"/>
+        </Style>
+        <Style x:Key="EstiloImagenCircularLista" TargetType="circulo:CircleImage">
+            <Setter Property="WidthRequest" Value="150"/>
+            <Setter Property="HeightRequest" Value="150"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="Aspect" Value="AspectFill"/>
+            <Setter Property="BorderThickness" Value="4"/>
+            <Setter Property="FillColor" Value="#FF99FF"/>
+            <Setter Property="BorderColor" Value="#DimGray"/>
+        </Style>
+
+        <Style x:Key="EstiloFrameImagenLista" TargetType="Frame">
+            <Setter Property="IsClippedToBounds" Value="True"/>
+            <Setter Property="BorderColor" Value="DarkGray"/>
+            <Setter Property="BackgroundColor" Value="#FF99FF"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="HeightRequest" Value="60"/>
+            <Setter Property="WidthRequest" Value="60"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HasShadow" Value="False"/>
+        </Style>
+
+    </Application.Resources>
+</Application>

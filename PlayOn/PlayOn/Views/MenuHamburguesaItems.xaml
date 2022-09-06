@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:circulo="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:iconos="clr-namespace:IconApp"
+    xmlns:vm="clr-namespace:PlayOn.ViewModels"
+    xmlns:views="clr-namespace:PlayOn.Views"
+    x:Class="PlayOn.Views.MenuHamburguesaItems"
+    Title =" ">
+    <StackLayout
+        BackgroundColor="Orange">
+        <circulo:CircleImage
+            x:Name="xfImage"
+            Source="persona"
+            WidthRequest="120" 
+            HeightRequest="120" 
+            Aspect="AspectFill" 
+            VerticalOptions="Start"
+            HorizontalOptions="CenterAndExpand" 
+            BorderThickness="4"
+            FillColor="DimGray"
+            BorderColor="White">
+            <circulo:CircleImage.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS" Value="0,60,0,0" />
+                <On Platform="Android, WinPhone, Windows" Value="0,10,0,0" />
+                </OnPlatform>
+            </circulo:CircleImage.Margin>
+        </circulo:CircleImage>
+        <Label
+            x:Name="lblNombre"
+            FontSize="Medium"
+            TextColor="White"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+        <ListView
+            x:Name="listView"
+            x:FieldModifier="public"
+            BackgroundColor="Orange">
+            <!--<ListView.ItemsSource>
+                <x:Array Type="{x:Type vm:MenuItemsViewModel}">
+                    <vm:MenuItemsViewModel Title="Cerrar sesión" IconSource="logo.png" TargetType="null" />
+                    <vm:MenuItemsViewModel Title="Cerrar sesión" IconSource="logo.png" TargetType="{x:Type views:HomePage}" />
+                    <local:MenuItemsViewModel Title="TodoList" IconSource="todo.png" TargetType="{x:Type local:TodoListPage}" />
+                    <local:MenuItemsViewModel Title="Reminders" IconSource="reminders.png" TargetType="{x:Type local:ReminderPage}" />
+                </x:Array>
+            </ListView.ItemsSource>-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <iconos:IconView 
+                                Grid.Column="0" 
+                                Source="{Binding FuenteIcono}" 
+                                Foreground="{Binding Fondo}"
+                                BackgroundColor="Transparent"
+                                WidthRequest="30" 
+                                HeightRequest="30"/>
+                            <Label
+                                Text="{Binding Titulo}" 
+                                Grid.Column="1" 
+                                FontAttributes="Bold" 
+                                TextColor="{Binding Fondo}" 
+                                FontSize="20"
+                                LineBreakMode="TailTruncation"
+                                VerticalOptions="Center"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+

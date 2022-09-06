@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:views="clr-namespace:PlayOn.Views" 
+    xmlns:controls="clr-namespace:TarjetaProducto.Controls"
+    x:Class="PlayOn.Views.BuscadorProductos"
+    Title="Buscador Productos">
+    <ContentPage.Content>
+        <StackLayout
+            Margin="10">
+            <views:BuscadorComponente
+                x:Name="buscadorComponente"
+                PropertyChanged="buscadorComponente_PropertyChanged"/>
+            <StackLayout Margin="10">
+                <Label
+                    Text="Productos Encontrados" 
+                    Margin="0, 20, 0, 0"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"/>
+                <ListView
+                    x:Name="listaProductos"
+                    RowHeight="100">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <controls:TarjetaProducto
+                                    NombreProducto="{Binding NombreProducto}"
+                                    ImagenFuente="{Binding ImagenFuente}"
+                                    Footer="{Binding Footer}"
+                                    Identificador="{Binding Identificador}"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:iconos="clr-namespace:IconApp"
+    x:Class="PlayOn.Views.MenuOpciones"
+    xmlns:circulo="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    Title="Menú Principal">
+    <StackLayout
+        Margin="10">
+        <circulo:CircleImage
+            x:Name="xfImage"
+            Source="persona"
+            Style="{StaticResource EstiloImagenCircular}">
+            <circulo:CircleImage.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS" Value="0,10,0,0" />
+                <On Platform="Android, WinPhone, Windows" Value="0,10,0,0" />
+                </OnPlatform>
+            </circulo:CircleImage.Margin>
+        </circulo:CircleImage>
+        <Label
+            x:Name="lblNombre"
+            Style="{StaticResource EstiloTitulo}"
+            HorizontalOptions="Center"/>
+        <Label
+            x:Name="lblTipoUsuario"
+            Style="{StaticResource EstiloSubtitulo}"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+        <ListView
+            x:Name="listaOpciones"
+            SelectionMode="Single"
+            HasUnevenRows="True"
+            ItemSelected="listaOpciones_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame
+                            BackgroundColor="#8d1ba5"
+                            Margin="0,5,0,5"
+                            CornerRadius="10"
+                            HasShadow="false"
+                            Padding="2">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <iconos:IconView 
+                                    Grid.Column="0" 
+                                    Source="{Binding FuenteIcono}" 
+                                    Foreground="{Binding Fondo}"
+                                    WidthRequest="35" 
+                                    HeightRequest="35"/>
+                                <Label
+                                    Text="{Binding Titulo}" 
+                                    VerticalOptions="Center"
+                                    Grid.Column="1"
+                                    HorizontalTextAlignment="Start"
+                                    FontAttributes="Bold" 
+                                    TextColor="{Binding Fondo}"
+                                    FontSize="18"
+                                    LineBreakMode="TailTruncation"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+

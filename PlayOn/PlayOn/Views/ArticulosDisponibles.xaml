@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:controls="clr-namespace:TarjetaProducto.Controls"
+    x:Class="PlayOn.Views.ArticulosDisponibles"
+    x:Name="ContentPage1"
+    Title="Articulos Disponibles">
+    <StackLayout
+        Padding="20">
+        <Label
+            Text="Lista de Productos disponibles actualmente"
+            Style="{StaticResource EstiloTitulo}"
+            HorizontalTextAlignment="Center"/>
+        <ListView
+            x:Name="listaProductos"
+            RowHeight="100">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <controls:TarjetaProducto
+                            NombreProducto="{Binding NombreProducto}"
+                            ImagenFuente="{Binding ImagenFuente}"
+                            Footer="{Binding Footer}"
+                            Identificador="{Binding Identificador}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+

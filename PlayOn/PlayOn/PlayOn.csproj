@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.4" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="SQLite.Net-PCL" />
+    <None Remove="sqlite-net-pcl" />
+    <None Remove="Models\" />
+    <None Remove="Views\" />
+    <None Remove="Refractored.MvvmHelpers" />
+    <None Remove="Plugin.Permissions" />
+    <None Remove="Xamarin.CommunityToolkit" />
+    <None Remove="Xam.Plugins.Settings" />
+    <None Remove="Xam.Plugins.Forms.ImageCircle" />
+    <None Remove="Xam.Plugin.Media" />
+    <None Remove="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ViewModels\ViewModelBase.cs" />
+    <Compile Remove="ViewModels\TipoUsuarioViewModel.cs" />
+    <Compile Remove="Services\IUsuarios.cs" />
+    <Compile Remove="Services\IArticulos.cs" />
+    <Compile Remove="Services\Usuarios.cs" />
+    <Compile Remove="Services\TipoUsuario.cs" />
+    <Compile Remove="Services\ITipoUsuario.cs" />
+    <Compile Remove="Services\Articulos.cs" />
+    <Compile Remove="Views\MenuHamburguesaItems.xaml.cs" />
+    <Compile Remove="Views\MenuHamburguesaPagina.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\MenuHamburguesaItems.xaml" />
+    <EmbeddedResource Remove="Views\MenuHamburguesaPagina.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\ArticulosDisponibles.xaml.cs">
+      <DependentUpon>ArticulosDisponibles.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Views\AgregarProducto.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BuscadorComponente.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BuscadorProductos.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\InformacionProducto.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ModificarCantidadProducto.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TarjetaProducto.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

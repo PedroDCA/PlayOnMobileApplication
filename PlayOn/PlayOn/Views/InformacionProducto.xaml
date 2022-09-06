@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PlayOn.Views.InformacionProducto"
+    Title="Información">
+    <ScrollView>
+        <StackLayout
+            Margin="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="130" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="220" />
+                </Grid.ColumnDefinitions>
+                <Frame
+                    Style="{StaticResource EstiloFrameImagenLista}"
+                    VerticalOptions="Center">
+                    <Image
+                        x:Name="imgFoto"
+                        Margin="-20"
+                        WidthRequest="100"
+                        HeightRequest="100"
+                        Aspect="AspectFill" />
+                </Frame>
+                <Label
+                    Grid.Column="1"
+                    x:Name ="lblNombre"
+                    FontAttributes="Bold"
+                    FontSize="23"
+                    VerticalTextAlignment="Start"
+                    HorizontalTextAlignment="Center" />
+                <Label
+                    Grid.Column="1"
+                    x:Name="lblCantidadDisponible"
+                    Margin="0,0,0,15"
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    VerticalTextAlignment="End"
+                    HorizontalTextAlignment="Start" />
+                <Label
+                    Grid.Column="1"
+                    x:Name="lblPrecio"
+                    Margin="0,0,0,15"
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    VerticalTextAlignment="End"
+                    HorizontalTextAlignment="End" />
+            </Grid>
+            <Label
+                Text="Descripcion"
+                FontAttributes="Bold"
+                FontSize="20" />
+            <Label
+                Grid.Column="1"
+                x:Name="lblDescripcion"
+                FontSize="13"/>
+            <Label
+                Grid.Column="1"
+                Padding="0, 10, 0, 0"
+                Text="Marca"
+                FontAttributes="Bold"
+                FontSize="20" />
+            <Label
+                Grid.Column="1"
+                x:Name="lblMarca"
+                FontSize="13"/>
+            <Label
+                Padding="0, 10, 0, 0"
+                Text="Categorias"
+                FontAttributes="Bold"
+                FontSize="20" />
+            <Label
+                x:Name="lblCategorias"
+                FontSize="13"/>
+            <Label
+                Padding="0, 10, 0, 0"
+                Text="Fecha de Ingreso"
+                FontAttributes="Bold"
+                FontSize="20" />
+            <Label
+                x:Name="lblFechaIngreso"
+                FontSize="13"/>
+            <Label
+                Padding="0, 10, 0, 0"
+                Text="SKU - ID"
+                FontAttributes="Bold"
+                FontSize="20" />
+            <Label
+                x:Name="lblSKU"
+                FontSize="13"/>
+            <Label
+                Padding="0, 20, 0, 0"
+                Text="Recomendaciones generales"
+                FontAttributes="Bold"
+                FontSize="20" 
+                HorizontalTextAlignment="Center"/>
+            <Label
+                x:Name="lblEdadMinima"
+                Padding="0, 20, 0, 20"
+                FontSize="13"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
